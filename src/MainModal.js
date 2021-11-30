@@ -58,7 +58,7 @@ export function MainModal() {
     const { first_name, last_name, email, password, city, state, pincode, country } = user;
 
     if (first_name && last_name && email && password && city && state && pincode && country) {
-      axios.post("http://localhost:5000/register", user)
+      axios.post("https://social-media-capstone.herokuapp.com/register", user)
         .then(res =>
           //  alert(res.alert.message)
           console.log(res)
@@ -87,7 +87,7 @@ export function MainModal() {
 
 
   const login = () => {
-    axios.post("http://localhost:5000/login", user)
+    axios.post("https://social-media-capstone.herokuapp.com/login", user)
       .then(res =>
         //  alert(res.data.message )
         console.log(res)

@@ -8,7 +8,7 @@ export function Profile() {
   const [profileList, setProfileList] = useState(JSON.stringify([]));
 
   useEffect(async () => {
-    var response = await axios.get('http://localhost:5000/socialMediaa');
+    var response = await axios.get('https://social-media-capstone.herokuapp.com/profile');
     setProfileList(response.data);
   }, []);
 
