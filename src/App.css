@@ -1,38 +1,536 @@
-.App {
+/* .App {
   text-align: center;
+  
+} */
+
+.nav_list{
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
 }
 
-.App-logo {
-  height: 40vmin;
+body{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(48, 43, 68, 0.199);
+}
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background: #11101d;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+  padding-left: 5px;
+}
+
+.sidebar.active{
+  width: 240px;
+}
+
+.sidebar .logo_content .logo{
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  margin-left: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo{
+  opacity: 1;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo_content .logo i{
+  font-size: 28px;
+  margin-right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo_content .logo .logo_name{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sidebar #btn{
+  position: absolute;
+  color: #fff;
+  left: 85%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50px);
+}
+
+.sidebar.active #btn{
+  left: 95%;
+}
+
+.sidebar ul{
+  margin-top: 20px;
+}
+
+.sidebar ul li{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 50px;
+  margin-bottom: 5px;
+}
+
+.sidebar ul li .tooltip{
+  position: absolute;
+  left: 122px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.sidebar.active ul li .tooltip{
+  display: none;
+}
+
+.sidebar ul li:hover .tooltip{
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%;
+}
+
+.sidebar ul li input{
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
+  transition: all 0.5s ease;
+  
+}
+
+.sidebar.active input{
+  width: 11.7rem;
+}
+
+
+.sidebar ul li .bx-search{
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  font-size: 22px;
+  margin-top: -.2rem;
+  transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search:hover{
+  background: #fff;
+  color: #1d1b31;
+
+}
+
+.sidebar ul li a{
+  color: #fff;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
 }
 
-.App-link {
-  color: #61dafb;
+
+.sidebar ul li a:hover{
+  color: #11101d;
+  background: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar ul li i{
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.sidebar .links_name{
+  opacity: 0;
+  pointer-events: auto;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+  
+.home_content{
+  position: absolute;
+  height: 100%;
+  left: 120px;
+  width: calc(100% - 120px);
+  transition: all 0.5s ease ;
+  overflow-y: scroll;
+}
+
+.home_content .text{
+  font-size: 25px;
+  font-weight: 500;                                                                         
+  color: #1d1b31;
+  margin-top: 2rem;
+}
+
+.sidebar.active ~ .home_content{
+  width: calc(68.5rem);
+  left: 270px;
+}
+
+
+
+
+.sidebar.active ~ .accounts {
+  width: calc(100%-240px);
+  left: 120px;
+  width: 70rem;
+  transition: all 0.5s ease;
+}
+
+.accounts {
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease ;
+  margin-top: 2rem;
+  margin-left: 9rem;
+}
+ 
+.accounts h1{
+  width: 10rem;
+  height: 1.5rem;
+  margin-bottom: 60px;
+  margin-left: 33px;
+}
+
+.accounts .flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3.2rem;   
+  margin-left: 2rem;
+}
+
+
+.accounts .flex .box{
+  width: 14rem;
+  height: 7.5rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.accounts .flex .box box-icon{
+  margin-left: 39%;
+  margin-top: 13%;
+  color: rgba(0, 0, 255, 0.726);
+}
+
+.sidebar.active ~ .dashboard {
+  width: calc(100%-240px);
+  left: 150px;
+  width: 70rem;
+  transition: all 0.5s ease;
+}
+
+.dashboard{
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease ;
+  margin-top: 2rem;
+  margin-left: 9rem;
+}
+
+.dashboard Card{
+  width: 1rem;
+}
+
+textarea{
+  resize: none;
+}
+
+#modalname{
+  margin-left: 5rem;
+  width: 15rem;
+  padding-left: 3px;
+}
+
+#modalsubmit{
+  margin-top: 12px;
+  margin-left: 10.5rem;
+  
+}
+
+#modaltitle{
+  margin-left: 1.2rem;
+  margin-top: -1rem;
+}
+
+.sidebar.active ~ .grid {
+  width: calc(100%-240px);
+  left: 150px;
+  width: 75rem;
+  transition: all 0.5s ease;
+}
+
+
+.grid{
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease ;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  margin-left: 9rem;
+  top: 2rem;
+}
+
+.boxing{
+  background-color: white;
+  width: 28rem;
+  height: 28rem;
+}
+.boxing .postss{
+  border: 1px solid rgba(0, 0, 0, 0.404);
+  top: 2px;
+  margin-top: 10px;  
+  height: 2rem;
+}
+.boxing .postss:hover{
+  padding: 5px;
+}
+
+.sidebar.active ~ .profile {
+  width: calc(100%-240px);
+  left: 50px;
+  width: 75rem;
+  transition: all 0.5s ease;
+}
+
+.profile{
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease ;
+  margin-left: 26rem;
+  margin-top: 1rem;
+ 
+}
+
+.profile input{
+  margin-top: 1px;
+  margin-right: 5rem;
+  margin-bottom: 1rem;
+  width: 12rem;
+  height: 2rem;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.profile .profile-edit{
+  font-size: 15px;
+  margin-left: 1px;
+  font-weight: 700;
+}
+
+.profile .profile-edit:hover{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.profile #fnameL{
+  margin-left: 13rem;
+}
+
+.profile #stateL{
+  margin-left: 16rem;
+}
+
+.profile #countryL{
+  margin-left: 13.8rem;
+}
+
+.profile #email, #phone , #address, #dob{
+  width: 29.7rem;
+}
+
+.profile #country{
+  margin-bottom: 1rem;
+}
+
+.profile #submit{
+  width: 6rem;
+  height: 2rem;
+  margin-left: 12rem;
+}
+
+.fb_dialog_advanced{
+  margin-left:25rem;
+  margin-top:-18rem;
+}
+
+.fb button:disabled{
+  cursor: not-allowed;
+}
+
+.mediaCards{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+
+.mediaCards .mediaCardFlex{
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+}
+
+.shareModalStyle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400;
+  background-color: rgb(230, 227, 227);
+  border: 2px solid #000;
+  box-shadow: 24;
+  padding: 3rem;
+  padding-top: 2rem;
+} 
+
+
+
+.fb-login button .fb-sym .fb-text{
+  font-weight: bold;
+  padding-top: 5px;
+  position: absolute;
+  padding-left: 8px;
+}
+
+.fb-login button{
+  padding-bottom: 10px; 
+  width: 7rem;
+  height: 2.7rem; 
+  padding-top: 6px;
+  margin-left: 1rem;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.54);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.fb-login button .fb-sym{
+  padding-left: .3rem;
+  margin-left: -5rem;
+  
+}
+
+.signIn{
+  margin-top: 2rem;
+}
+
+#signInPassF{
+  margin-left: 10.8rem;
+}
+
+#signInMail, #signInPass{
+  width: 11rem;
+  height: 1.5rem;
+}
+
+#signInPass{
+  margin-left: 2rem;
+  margin-bottom: .5rem;
+}
+
+#login{
+  margin-left: 20rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  width: 5rem;
+  height: 1.5rem;
+}
+#fnameL{
+  margin-left: 6.9rem;
+}
+#lname,#state,#country{
+  margin-left: .8rem;
+}
+#stateL{
+  margin-left: 10.2rem;
+}
+#countryL{
+  margin-left: 7.7rem;
+}
+#signup{
+  margin-top: 1rem;
+}
+#phonee,#emaill{
+  padding-right: 12rem;
+}
+
+.guestuser{
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.54);
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding-bottom: 10px; 
+  position: relative;
+  width: 7rem;
+  height: 2.7rem; 
+  padding-top: 6px;
+  margin-left: 2rem;
+}
+
+#close{
+  margin-top: 2rem;
+  margin-left: 10.5rem;
+}
+
+.warn{
+  margin-left: 4rem;
+  color: rgba(0, 0, 255, 0.624);
 }
