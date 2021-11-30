@@ -142,7 +142,7 @@ export function MainModal() {
                       <button className="guestuser" onClick={handleClose}>Guest User</button>
                     </div>
                   </div>
-                  <button id="close" onClick={() => window.location.href = "home"}>Close</button>
+                  <button id="close" onClick={handleClose}>Close</button>
                   <p className="warn">**once you signedIn click close**</p>
                 </Typography>
 

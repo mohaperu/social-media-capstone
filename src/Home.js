@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MediaCard } from './MediaCard';
 import { Moodal } from "./Moodal";
+import { MainModal } from './MainModal';
 
 
 export function Home() {
@@ -20,7 +21,8 @@ export function Home() {
         <p>Hi {(text === "") ? "User" : text}, Welcome to Social Media Mangement</p>
         <MediaCard />
         <Moodal value={text} onChange={handleChange} />
-        
+        <MainModal />
+
 
 
       </div>

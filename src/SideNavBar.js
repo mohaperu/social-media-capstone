@@ -4,7 +4,6 @@ import { Post } from "./Post";
 import { Profile } from "./Profile";
 import { AddAccount } from "./AddAccount";
 import { Home } from "./Home";
-import { MainModal } from './MainModal';
 
 
 export function SideNavBar() {
@@ -33,13 +32,7 @@ export function SideNavBar() {
             <span className="tooltip">Search</span>
           </li>
 
-          <li>
-            <Link to="/home">
-              <i className='bx bxs-user-account'></i>
-              <span className="links_name">home</span>
-            </Link>
-            <span className="tooltip">home</span>
-          </li>
+          
           <li>
             <Link to="/add_account">
               <i className='bx bxs-user-account'></i>
@@ -71,11 +64,9 @@ export function SideNavBar() {
 
 
       <Switch>
-        <Route exact path="/">
-          <Open />
-        </Route>
+        
 
-        <Route path="/home">
+        <Route exact path="/">
           <Home />
         </Route>
 
@@ -99,7 +90,6 @@ export function SideNavBar() {
 function Open(){
   return(
     <>
-    <MainModal />
     </>
   );
 }
