@@ -6,6 +6,7 @@ import { AddAccount } from "./AddAccount";
 import { Home } from "./Home";
 
 
+
 export function SideNavBar() {
 
   const [active, setActive] = useState(true);
@@ -32,7 +33,14 @@ export function SideNavBar() {
             <span className="tooltip">Search</span>
           </li>
 
-          
+          <li>
+            <Link to="/">
+              <i class='bx bx-home'></i>
+              <span className="links_name">Home</span>
+            </Link>
+            <span className="tooltip">Home</span>
+          </li>
+
           <li>
             <Link to="/add_account">
               <i className='bx bxs-user-account'></i>
@@ -47,13 +55,13 @@ export function SideNavBar() {
             </Link>
             <span className="tooltip">Post</span>
           </li>
-          <li>
+          {/* <li>
             <Link to="/profile">
               <i className='bx bxs-dashboard'></i>
               <span className="links_name">Profile Details</span>
             </Link>
             <span className="tooltip">Profile</span>
-          </li>
+          </li> */}
         </ul>
       </div>
       {/* <div className="home_content">
@@ -64,7 +72,7 @@ export function SideNavBar() {
 
 
       <Switch>
-        
+
 
         <Route exact path="/">
           <Home />
@@ -78,18 +86,12 @@ export function SideNavBar() {
           <Post />
         </Route>
 
-        <Route path="/profile">
+
+        {/* <Route path="/profile">
           <Profile />
-        </Route>
+        </Route> */}
       </Switch>
     </>
   );
 }
 
-
-function Open(){
-  return(
-    <>
-    </>
-  );
-}

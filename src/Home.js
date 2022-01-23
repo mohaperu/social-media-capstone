@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { MediaCard } from './MediaCard';
 import { Moodal } from "./Moodal";
 import { MainModal } from './MainModal';
+import {Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 
 export function Home() {
@@ -18,7 +20,8 @@ export function Home() {
   return (
     <div className="home_content">
       <div className="text">
-        <p>Hi {(text === "") ? "User" : text}, Welcome to Social Media Mangement</p>
+        <p>Hi {(text === "") ? "User" : text}, Welcome to Social Media Mangement 
+        </p>
         <MediaCard />
         <Moodal value={text} onChange={handleChange} />
         <MainModal />

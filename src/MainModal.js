@@ -92,15 +92,16 @@ export function MainModal() {
         //  alert(res.data.message )
         console.log(res)
       );
+      handleClose();
   };
 
 
   return (
     <>
-      <div>!
+      <div>
         <Modal
           open={open}
-          // onClose={handleClose}
+          onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
@@ -117,9 +118,8 @@ export function MainModal() {
 
               <TabPanel value={value} index={0}>
 
-                <Typography>
+                <Typography style={{marginTop:30}}>
                   {console.log("usersss", profile)}
-
                   {console.log("usersss", user)}
                   <label htmlFor="signInMail">E-Mail</label>
                   <label htmlFor="signInPass" id="signInPassF">Password</label><br />
@@ -142,8 +142,8 @@ export function MainModal() {
                       <button className="guestuser" onClick={handleClose}>Guest User</button>
                     </div>
                   </div>
-                  <button id="close" onClick={handleClose}>Close</button>
-                  <p className="warn">**once you signedIn click close**</p>
+                  {/* <button id="close" onClick={handleClose}>Close</button>
+                  <p className="warn">**once you signedIn click close**</p> */}
                 </Typography>
 
               </TabPanel>

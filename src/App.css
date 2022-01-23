@@ -3,10 +3,17 @@
   
 } */
 
+.login{
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding: 5px;
+  width: 5rem;
+}
+
 .nav_list{
   list-style: none;
   margin-top: 0;
-  padding-left: 0;
+  padding-left: 0;  
 }
 
 body{
