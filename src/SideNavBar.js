@@ -1,9 +1,11 @@
 import { Link, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 import { Post } from "./Post";
-import { Profile } from "./Profile";
+// import { Profile } from "./Profile";
 import { AddAccount } from "./AddAccount";
 import { Home } from "./Home";
+import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
 
 
 
@@ -34,7 +36,7 @@ export function SideNavBar() {
           </li>
 
           <li>
-            <Link to="/">
+            <Link to="/home">
               <i class='bx bx-home'></i>
               <span className="links_name">Home</span>
             </Link>
@@ -74,6 +76,23 @@ export function SideNavBar() {
       <Switch>
 
 
+        {/* <Route exact path="/">
+          <LoginPage />
+        </Route> */}
+
+        <Route exact path="/login">
+          <LoginPage />
+        </Route>
+
+        <Route exact path="/register">
+          <RegisterPage />
+        </Route>
+
+        <Route exact path="/home">
+          <Home />
+        </Route>
+
+        
         <Route exact path="/">
           <Home />
         </Route>
@@ -85,7 +104,6 @@ export function SideNavBar() {
         <Route path="/post">
           <Post />
         </Route>
-
 
         {/* <Route path="/profile">
           <Profile />

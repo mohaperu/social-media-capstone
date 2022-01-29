@@ -6,7 +6,6 @@ export function GoogleLog() {
 
     const onLoginSuccess = (res) => {
         console.log("Login Successfull", res);
-
     }
 
     const onFailureSuccess = (res) => {

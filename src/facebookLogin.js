@@ -20,6 +20,7 @@ function FbLogin() {
 
     const handleResponse = (data) => {
         console.log(data.profile);
+        
     }
 
     const handleError = (error) => {

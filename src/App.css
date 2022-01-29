@@ -2,6 +2,66 @@
   text-align: center;
   
 } */
+.LPage{
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+}
+
+.loginTitle{
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+.LoginPage{
+  /* text-align: center; */
+  border: 1px solid black;
+  gap: 10px;
+  padding: 3rem 7rem;
+  background-color: white;
+
+}
+
+#submit{
+  padding: 4px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+#emaill,#passwordl,#usernamel{
+  font-size: 1rem;
+}
+#email,#password,#username{
+  padding: 5px 5px;
+  width: 17rem;
+  margin: 10px 0;
+}
+
+#register{
+  text-align: right;
+  color: inherit;
+  text-decoration: none;
+}
+
+#register:hover{
+  color: blue;
+  text-decoration: underline;
+}
+
+#LoginButton{
+  padding: 5px 15px;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
+
+
+
+
 
 .login{
   margin-left: 1rem;
