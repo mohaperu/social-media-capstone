@@ -88,12 +88,8 @@ export function SideNavBar() {
           <RegisterPage />
         </Route>
 
-        <Route exact path="/home">
-          <Home />
-        </Route>
-
         
-        <Route exact path="/">
+        <Route exact path="/" >
           <Home />
         </Route>
 

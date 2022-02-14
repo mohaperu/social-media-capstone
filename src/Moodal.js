@@ -5,7 +5,10 @@ import { Typography, Modal, Backdrop, Fade, Box } from '@mui/material';
 export function Moodal(props) {
 
   const [open, setOpen] = useState(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+
+  }
 
   const handleChange = (event) => {
     props.onChange(event.target.value);
@@ -36,6 +39,7 @@ something(); // nothing happens
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
+    height:160,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -63,6 +67,8 @@ something(); // nothing happens
               <input type="text" id="modalname" onChange={handleChange} placeholder="Enter your name" /><br />
               <button id="modalsubmit" value={props.text} onClick={handleClose}>Submit</button><br />
             </Typography>
+            <p style={{textAlign:"center"}}>Or</p>
+            <button className="loginnn" onClick={() => window.open("/login")}>Login</button>
           </Box>
         </Fade>
       </Modal>
