@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Typography, Modal, Backdrop, Fade, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 export function Moodal(props) {
@@ -68,7 +69,7 @@ something(); // nothing happens
               <button id="modalsubmit" value={props.text} onClick={handleClose}>Submit</button><br />
             </Typography>
             <p style={{textAlign:"center"}}>Or</p>
-            <button className="loginnn" onClick={() => window.open("/login")}>Login</button>
+            <Link to="/login"><button className="loginnn">Login</button></Link>
           </Box>
         </Fade>
       </Modal>

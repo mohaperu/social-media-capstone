@@ -10,8 +10,8 @@ const LoginPage = () => {
     let history = useHistory();
 
     const [data, setData] = useState({
-        email: "",
-        password: ""
+        email: "test@gmail.com",
+        password: "Admin123@"
       });
     
       const handleChange = ({ currentTarget: input }) => {
