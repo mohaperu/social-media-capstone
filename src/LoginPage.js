@@ -26,7 +26,7 @@ const LoginPage = () => {
           const url = "https://social-media-management-tool-b.herokuapp.com/api/auth";
           const { data: res } = await axios.post(url, data);
           localStorage.setItem("token", res.data);
-          history.push("/home");
+          history.push("/");
           alert("Login Successfull")
           console.log(res.message);
         } catch (error) {
